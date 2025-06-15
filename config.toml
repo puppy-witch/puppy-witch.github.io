@@ -1,10 +1,14 @@
-# The URL the site will be built for
 base_url = "https://puppy-witch.github.io"
 title = "Puppy-Witches Website"
 description = "My personal website, blog, etc"
 output_dir = "docs"
 
 theme = "tlachtga"
+
+taxonomies = [
+    {name = "tags", feed = true},
+    {name = "categories", feed = true},
+]
 compile_sass = true
 build_search_index = true
 generate_feeds = true
@@ -21,10 +25,6 @@ include_title = true
 include_description = true
 include_content = true
 
-taxonomies = [
-    {name = "tags", feed = true},
-    {name = "categories", feed = true},
-]
 
 [markdown]
 highlight_code = true
@@ -35,9 +35,7 @@ external_links_no_follow = true
 external_links_no_referrer = true
 smart_punctuation = true
 
-
 [extra]
-# Put all your custom variables here
 author = "M"
 github = "puppy-witch"
 pronouns = "She/They/It"
@@ -49,7 +47,6 @@ terminal_font = false
 accessibility_mode = true
 respect_reduced_motion = true
 
-# Content features
 estimated_read_time = true
 show_author = true
 show_categories = true
@@ -60,6 +57,7 @@ social_links = [
     {name = "GitHub", url = "https://github.com/puppy-witch", icon = "github"},
     {name = "Matrix", url = "@puppy-witch:matrix.org", icon = "matrix"},
 ]
+
 menu = [
     {name = "Home", url = "/"},
     {name = "About", url = "/about/"},
@@ -68,7 +66,6 @@ menu = [
     {name = "Tags", url = "/tags/"},
 ]
 
-# Footer links
 footer_links = [
     {name = "Anti-Capitalist License", url = "/license/"},
     {name = "Accessibility", url = "/accessibility/"},
