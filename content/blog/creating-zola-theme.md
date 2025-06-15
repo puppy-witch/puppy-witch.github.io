@@ -5,11 +5,19 @@ date = 2025-06-15
 [taxonomies]
 tags = ["theme", "zola", "Zola", "Dev", "dev", "Development progress", "project", "coding"]
 categories = ["web dev"]
+
+
+[extra]
+# Featured image (note the quotes!)
+featured_image = "images/posts/creating-zola-theme/purpletheme.png"
+featured_image_alt = "Purple witch theme preview showing mystical effects"
 +++
 
 # Tlachtga - My First Zola Theme
 
 I've built a custom Zola theme called **Tlachtga** that is retro but also relatively accessible and lightweight.
+
+![Purple Witch Theme Preview](images/posts/creating-zola-theme/purpletheme.png)
 
 ## Features (Ideally, we shall see how this progresses)
 
@@ -18,6 +26,7 @@ I've built a custom Zola theme called **Tlachtga** that is retro but also relati
 - **Amber**: Warm amber terminal (new!)
 - **Dark**: Modern dark mode
 - **Light**: Clean 'light' (by my standards) mode (gross)
+- **Mystic Retro**: Purple retro theme
 
 I plan to add a purple phosphor theme later.
 
@@ -32,6 +41,14 @@ I plan to add a purple phosphor theme later.
 
 - Custom shortcodes for content, witchy theme
 - Intentional, purposeful design (or at least attempting at one)
+- Featured images on post cards
+- Responsive image processing
+- Multiple layout options
+- Gallery support with shortcodes
+- Automatic optimization
+
+
+{{ image(src="images/posts/creating-zola-theme/purpletheme.png", alt="Purple witch theme screenshot", caption="The Purple theme in action", width=800) }}
 
 ## Try It Out
 The theme is open source and available at:
