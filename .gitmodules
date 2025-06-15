@@ -1,0 +1,3 @@
+[submodule "themes/tlachtga"]
+	path = themes/tlachtga
+	url = https://github.com/puppy-witch/tlachtga-theme.git
