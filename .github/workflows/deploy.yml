@@ -2,7 +2,8 @@ name: Deploy Zola site to Pages
 
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -14,28 +15,39 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ZOLA_VERSION: 0.18.0
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        
-      - name: Install Zola
-        uses: taiki-e/install-action@v2
         with:
-          tool: zola@latest
-          
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v4
+
+      - name: Install Zola
+        run: |
+          curl -sL https://github.com/getzola/zola/releases/download/v${{ env.ZOLA_VERSION }}/zola-v${{ env.ZOLA_VERSION }}-x86_64-unknown-linux-gnu.tar.gz | tar zxv
+          sudo mv zola /usr/local/bin/
+
       - name: Build with Zola
-        run: zola build
-        
+        run: |
+          zola build --base-url ${{ steps.pages.outputs.base_url }}
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: ./docs
 
   deploy:
     environment:
