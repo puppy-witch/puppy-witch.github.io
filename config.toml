@@ -2,7 +2,7 @@
 base_url = "https://puppy-witch.github.io"
 title = "Puppy-Witches Website"
 description = "My personal website, blog, etc"
-
+output_dir = "docs"
 
 theme = "tlachtga"
 compile_sass = true
