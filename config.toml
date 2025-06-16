@@ -47,6 +47,8 @@ terminal_font = false
 accessibility_mode = true
 respect_reduced_motion = true
 
+process_images = true
+
 estimated_read_time = true
 show_author = true
 show_categories = true
@@ -63,6 +65,7 @@ menu = [
     {name = "About", url = "/about/"},
     {name = "Blog", url = "/blog/"},
     {name = "Projects", url = "/projects/"},
+    {name = "Transmutation", url = "/transmutation/"},
     {name = "Tags", url = "/tags/"},
 ]
 
